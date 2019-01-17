@@ -16,12 +16,7 @@ namespace Projeto01.Entities
         //Relacionamento de Associação (TER-1)
         public Setor Setor { get; set; }
 
-        public Funcionario()
-        {
-
-        }
-
-        public Funcionario(int idFuncionario, string nome, decimal salario, DateTime dataAdmissao)
+        public void Funcionario (int idFuncionario, string nome, decimal salario, DateTime dataAdmissao)
         {
             IdFuncionario = idFuncionario;
             Nome = nome;
