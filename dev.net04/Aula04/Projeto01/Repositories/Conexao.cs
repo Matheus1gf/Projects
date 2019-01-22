@@ -18,16 +18,16 @@ namespace Projeto01.Repositories
         public void AbrirConexao()
         {
             Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["aula04"].ConnectionString);
-            Connection.Open();
+            Connection.Open();              
         }
-
+        
         //Método para fechar conexão com o banco de dados
         public void FecharConexao()
         {
             if (Connection != null)
             {
                 Connection.Close();
-            }
+            }  
         }
     }
 }

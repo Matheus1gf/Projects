@@ -6,28 +6,32 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Projeto01.Entities;
 
-
 namespace Projeto01.Repositories
 {
     public class SetorRepository : Conexao
     {
+        //Método para inserir um setor no banco de dados
         public void Inserir(Setor setor)
         {
-            string query = "insert into Setor(Nome) Values(@Nome)";
+            //Instrução SQL
+            string query = "insert into Setor(Nome) values(@Nome)";
 
+            //Executando a instrução SQL...
             Command = new SqlCommand(query, Connection);
-            Command.Parameters.AddWithValue("@nome", setor.Nome);
+            Command.Parameters.AddWithValue("@Nome", setor.Nome);
             Command.ExecuteNonQuery();
-
         }
+          
         public void Atualizar(Setor setor)
         {
             string query = "update Setor set Nome = @Nome where IdSetor = @IdSetor";
-            Command = new SqlCommand(query , Connection);
+
+            Command = new SqlCommand(query, Connection);
             Command.Parameters.AddWithValue("@Nome", setor.Nome);
             Command.Parameters.AddWithValue("@IdSetor", setor.IdSetor);
             Command.ExecuteNonQuery();
         }
+
         public void Excluir(int idSetor)
         {
             string query = "delete from Setor where IdSetor = @IdSetor";
@@ -37,5 +41,26 @@ namespace Projeto01.Repositories
             Command.ExecuteNonQuery();
         }
 
+        public List<Setor> Consultar()
+        {
+            string query = "select * from Setor";
+
+            Command = new SqlCommand(query, Connection);
+            DataReader = Command.ExecuteReader();
+
+            List<Setor> lista = new List<Setor>();
+
+            while(DataReader.Read())
+            {
+                Setor setor = new Setor();
+
+                setor.IdSetor = Convert.ToInt32(DataReader["IdSetor"]);
+                setor.Nome = Convert.ToString(DataReader["Nome"]);
+
+                lista.Add(setor);
+            }
+
+            return lista;
+        }
     }
 }

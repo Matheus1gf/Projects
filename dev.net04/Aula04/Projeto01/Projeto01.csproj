@@ -61,6 +61,8 @@
   <ItemGroup>
     <Compile Include="Entities\Funcionario.cs" />
     <Compile Include="Entities\Setor.cs" />
+    <Compile Include="Presentation\FuncionarioPresentation.cs" />
+    <Compile Include="Presentation\SetorPresentation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Conexao.cs" />
