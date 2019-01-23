@@ -43,11 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\AutorControle.cs" />
+    <Compile Include="Controls\LivroControle.cs" />
+    <Compile Include="Entities\Autor.cs" />
+    <Compile Include="Entities\Livro.cs" />
+    <Compile Include="Interfaces\IAutorControle.cs" />
+    <Compile Include="Interfaces\ILivroControle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
