@@ -20,7 +20,7 @@ namespace Aula05.Repositories
         Connection.Open();
     }
 
-    public void FecharCOnexao()
+    public void FecharConexao()
     {
         if (Connection != null)
         {
