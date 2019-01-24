@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ClienteControle.cs" />
+    <Compile Include="Controls\ProdutoControle.cs" />
+    <Compile Include="Entities\Cliente.cs" />
+    <Compile Include="Entities\Produtos.cs" />
+    <Compile Include="Interfaces\IControle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
